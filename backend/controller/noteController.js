@@ -1,7 +1,7 @@
 export const getAllnotes=(req,res)=>{
     res.status(200).send("notes fetched");
 }
-jv;vnkvn
+// klffkkn
 export const CreateNotes=(req,res)=>{
     res.status(200).send("notes fetched");
 }
