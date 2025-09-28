@@ -1,12 +1,15 @@
 import express from "express";
-
-
+import dotenv from "dotenv"
 import notesRouter from "./routes/noteRouter.js"
-const app=express()
+import connectDB from "./db.js";
 
+dotenv.config();
+const app=express()
+const PORT=process.env.PORT || 5000;
+connectDB()
+app.use(express.json())
 app.use("/api/notes",notesRouter)
-app.listen(5000,()=>{
+app.listen(PORT,()=>{
     console.log("serevr is rumming on PORT:5000");
 })
 
-// mongodb+srv://krishnapvilasan124_db_user:Gm26u8PNvaDy2DA0@cluster0.dwn2fwm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
